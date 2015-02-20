@@ -8,6 +8,7 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process('SIM')
 
 fileDir="root://hephyse.oeaw.ac.at//dpm/oeaw.ac.at/home/cms/store/user/nrad/T2DegStop2j/lhe/"
+#fileDir="file:/afs/cern.ch/work/n/nrad/public/T2DegStop/lhe_processed/T2DegStop2j/"
 fileNameList=[
 "T2DegStop2j_300.0_0_decayed_1000022_270.lhe",
 "T2DegStop2j_300.0_10_decayed_1000022_270.lhe",
@@ -46,7 +47,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(10)
+    input = cms.untracked.int32(7500)
 )
 
 # Input source
@@ -71,7 +72,7 @@ process.RAWSIMoutput = cms.OutputModule("PoolOutputModule",
     splitLevel = cms.untracked.int32(0),
     eventAutoFlushCompressedSize = cms.untracked.int32(5242880),
     outputCommands = process.RAWSIMEventContent.outputCommands,
-    fileName = cms.untracked.string('T2DegStop2j_300_270_GEN_SIM.root'),
+    fileName = cms.untracked.string('T2DegStop2j_300_270_GENSIM.root'),
     dataset = cms.untracked.PSet(
         filterName = cms.untracked.string(''),
         dataTier = cms.untracked.string('GEN-SIM')

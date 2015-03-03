@@ -26,7 +26,7 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(1)
+    input = cms.untracked.int32(500)
 )
 
 # Input source
@@ -52,7 +52,7 @@ process.RAWSIMoutput = cms.OutputModule("PoolOutputModule",
     splitLevel = cms.untracked.int32(0),
     eventAutoFlushCompressedSize = cms.untracked.int32(5242880),
     outputCommands = process.RAWSIMEventContent.outputCommands,
-    fileName = cms.untracked.string('file:T2DegStop2j_300_270_GENSIMHLT_step1.root'),
+    fileName = cms.untracked.string('file:T2DegStop2j_300_270_GEN-SIM-HLT_step1.root'),
     dataset = cms.untracked.PSet(
         filterName = cms.untracked.string(''),
         dataTier = cms.untracked.string('GEN-SIM-RAW')
@@ -62,7 +62,18 @@ process.RAWSIMoutput = cms.OutputModule("PoolOutputModule",
 # Additional output definition
 
 # Other statements
-process.mix.input.fileNames = cms.untracked.vstring(['/store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/001A2454-4871-E411-96DE-001CC416C686.root', '/store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/008CF00C-4271-E411-8466-001F296544A8.root', '/store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/0098B0C6-4D71-E411-A1FF-0025905A60D2.root', '/store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/00C5DD2C-4771-E411-AC2F-0025905A60BE.root', '/store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/00C6A3EC-3D71-E411-8804-549F35AD8B95.root', '/store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/00DC78A7-4271-E411-BD0B-001EC9B080CD.root', '/store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/00E0A2FF-2A71-E411-AB78-BCAEC5567FD2.root', '/store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/0219E11C-4471-E411-9E90-0025905A612A.root', '/store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/02517B21-4571-E411-975F-9CB65404FBA0.root', '/store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/0259A65C-4A71-E411-9469-0025905B860E.root'])
+process.mix.input.fileNames = cms.untracked.vstring([\
+                                    'root://xrootd.unl.edu//store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/001A2454-4871-E411-96DE-001CC416C686.root', 
+                                    'root://xrootd.unl.edu//store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/008CF00C-4271-E411-8466-001F296544A8.root', 
+                                    'root://xrootd.unl.edu//store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/0098B0C6-4D71-E411-A1FF-0025905A60D2.root', 
+                                    'root://xrootd.unl.edu//store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/00C5DD2C-4771-E411-AC2F-0025905A60BE.root', 
+                                    'root://xrootd.unl.edu//store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/00C6A3EC-3D71-E411-8804-549F35AD8B95.root', 
+                                    'root://xrootd.unl.edu//store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/00DC78A7-4271-E411-BD0B-001EC9B080CD.root', 
+                                    'root://xrootd.unl.edu//store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/00E0A2FF-2A71-E411-AB78-BCAEC5567FD2.root', 
+                                    'root://xrootd.unl.edu//store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/0219E11C-4471-E411-9E90-0025905A612A.root', 
+                                    'root://xrootd.unl.edu//store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/02517B21-4571-E411-975F-9CB65404FBA0.root', 
+                                    'root://xrootd.unl.edu//store/mc/RunIIFall14GS/MinBias_TuneCUETP8M1_13TeV-pythia8/GEN-SIM/MCRUN2_71_V1-v3/00000/0259A65C-4A71-E411-9469-0025905B860E.root'
+                                    ])
 from Configuration.AlCa.GlobalTag_condDBv2 import GlobalTag
 process.GlobalTag = GlobalTag(process.GlobalTag, 'MCRUN2_73_V9', '')
 
